@@ -1,18 +1,19 @@
-const express = require("express");
-const dotenv = require("dotenv");
-const morgan = require("morgan");
-const colors = require("colors");
-const errorHandler = require("./middlewares/error");
-const connectDB = require("./config/db");
+const express = require('express');
+const dotenv = require('dotenv');
+const morgan = require('morgan');
+const colors = require('colors');
+const errorHandler = require('./middlewares/error');
+const connectDB = require('./config/db');
 
 //Load env vars
-dotenv.config({ path: "./config/config.env" });
+dotenv.config({ path: './config/config.env' });
 
 //Connect to Database
 connectDB();
 
 //Route Files
-const bootcampRouter = require("./routes/bootcamps");
+const bootcampRouter = require('./routes/bootcamps');
+const coursesRouter = require('./routes/courses');
 
 const app = express();
 
@@ -20,12 +21,13 @@ const app = express();
 app.use(express.json());
 
 //Dev logging middleware
-if (process.env.NODE_ENV === "development") {
-    app.use(morgan("dev"));
+if (process.env.NODE_ENV === 'development') {
+    app.use(morgan('dev'));
 }
 
 //Mount Routers
-app.use("/api/v1/bootcamps", bootcampRouter);
+app.use('/api/v1/bootcamps', bootcampRouter);
+app.use('/api/v1/courses', coursesRouter);
 
 app.use(errorHandler);
 
@@ -40,7 +42,7 @@ const server = app.listen(
 );
 
 //Handle unhandled promise rejections
-process.on("unhandledRejection", (err, promise) => {
+process.on('unhandledRejection', (err, promise) => {
     console.log(`Error:${err.message}`.red);
     // Close server and exit process
     server.close(() => process.exit(1));
