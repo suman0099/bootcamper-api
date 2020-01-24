@@ -51,7 +51,7 @@ exports.authorize = (...roles) => {
                     403
                 )
             );
-            next();
         }
+        next();
     };
 };
