@@ -22,6 +22,9 @@ npm run dev
 npm start
 ```
 
+## Bootcamper api Specification
+> [bootcamper_specs.md](./bootcamper_specs.md)
+
 ## Live
 
 > [Live API with Documentation](https://bootcamper-suman.herokuapp.com/)
