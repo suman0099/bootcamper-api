@@ -2,6 +2,10 @@
 
 > Backend API for BootCamper application which is a bootcamp directory website
 
+## Live
+
+> [Live API with Documentation](https://bootcamper-suman.herokuapp.com/)
+
 ## Usage
 
 Rename "config/config.env.env" to "config/config.env" and update the values/settings to your own
@@ -125,6 +129,4 @@ npm start
 -   Add html files as the / route for the api
 
 
-## Live
 
-> [Live API with Documentation](https://bootcamper-suman.herokuapp.com/)
