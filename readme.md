@@ -86,7 +86,7 @@ npm start
 
 ### Users & Authentication
 
--   Authentication will be ton using JWT/cookies
+-   Authentication will be done using JWT/cookies
     -   JWT and cookie should expire in 30 days
 -   User registration
     -   Register as a "user" or "publisher"
